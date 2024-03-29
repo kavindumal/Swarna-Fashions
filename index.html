@@ -12,12 +12,125 @@
             <div class="search-bar-rectangle">
                 <input type="text" placeholder="Search" name="" id="search-bar-text" />
             </div>
+            <button class="home-button" @click="changeBtn('home-button')" :class="{ active: activeButton === 'home-button'}">Home</button>
+            <button class="womens-button" @click="changeBtn('womens-button')" :class="{ active: activeButton === 'womens-button'}">Womens</button>
+            <button class="mens-button" @click="changeBtn('mens-button')" :class="{ active: activeButton === 'mens-button'}">Mens</button>
+            <button class="kids-button" @click="changeBtn('kids-button')" :class="{ active: activeButton === 'kids-button'}">Kids</button>
+            <button class="profile-details-button"></button>
+            <button class="wishlist-button"></button>
+            <button class="add-to-cart-button"></button>
         </div>
     </div>
 </body>
 </html>
 
+<script>
+    export default {
+        data() {
+            return {
+                activeButton: 'home-button'
+            };
+        },
+        methods: {
+            changeBtn(buttonName) {
+                this.activeButton = buttonName;
+            }
+        }
+    }
+</script>
+
 <style>
+    .add-to-cart-button {
+        position: absolute;
+        top: 30px;
+        right: 65px;
+        background-image: url('/assets/photos/add-to-cart-button.png');
+        background-size: cover;
+        width: 45px; 
+        height: 45px;
+        background-color: transparent; 
+        border: none;
+        cursor: pointer;
+    }
+
+    .wishlist-button {
+        position: absolute;
+        top: 30px;
+        right: 120px;
+        background-image: url('/assets/photos/wishlist-button.png');
+        background-size: cover;
+        width: 45px; 
+        height: 45px;
+        background-color: transparent; 
+        border: none;
+        cursor: pointer;
+    }
+
+    .profile-details-button {
+        position: absolute;
+        top: 30px;
+        right: 175px;
+        background-image: url('/assets/photos/profile-details-icon.png');
+        background-size: cover;
+        width: 45px; 
+        height: 45px;
+        background-color: transparent; 
+        border: none;
+        cursor: pointer;
+    }
+
+    .active {
+        color: #0077B6;
+    }
+
+    .kids-button {
+        position: absolute;
+        right: 275px;
+        top: 42px;
+        font-size: 17px;
+        background-color: transparent;
+        border-color: transparent;
+        color: #838383;
+        width: 100px;
+        height: 20px;
+    }
+
+    .mens-button {
+        position: absolute;
+        right: 400px;
+        top: 42px;
+        font-size: 17px;
+        background-color: transparent;
+        border-color: transparent;
+        color: #838383;
+        width: 100px;
+        height: 20px;
+    }
+
+    .womens-button {
+        position: absolute;
+        right: 525px;
+        top: 42px;
+        font-size: 17px;
+        background-color: transparent;
+        border-color: transparent;
+        color: #838383;
+        width: 100px;
+        height: 20px;
+    }
+
+    .home-button {
+        position: absolute;
+        right: 650px;
+        top: 42px;
+        font-size: 17px;
+        background-color: transparent;
+        border-color: transparent;
+        color: #838383;
+        width: 100px;
+        height: 20px;
+    }
+
     .search-bar-rectangle {
         position: absolute;
         right: 875px;
